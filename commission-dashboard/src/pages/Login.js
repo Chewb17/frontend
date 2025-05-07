@@ -8,7 +8,7 @@ function Login() {
   const login = async () => {
     try {
       const res = await axios.post(
-        'http://127.0.0.1:8000/api/login/',
+        'https://backend-qzry.onrender.com/api/login/',
         { username, password },
         { headers: { 'Content-Type': 'application/json' } }
       );
@@ -35,7 +35,7 @@ export default Login;
 const fetchSales = async () => {
   try {
     const token = localStorage.getItem('token');
-    const res = await axios.get('http://127.0.0.1:8000/api/sales/', {
+    const res = await axios.get('https://backend-qzry.onrender.com/api/sales/', {
       headers: {
         Authorization: `Token ${token}`,
       },

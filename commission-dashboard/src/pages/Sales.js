@@ -20,7 +20,7 @@ function Sales() {
   const fetchSales = useCallback(async () => {
     const token = localStorage.getItem('token');
     try {
-      const res = await axios.get('http://127.0.0.1:8000/api/sales/', {
+      const res = await axios.get('https://backend-qzry.onrender.com/api/sales/', {
         headers: { Authorization: `Token ${token}` },
       });
 
@@ -111,7 +111,7 @@ function Sales() {
       console.log('Dados enviados ao backend no POST /api/sales/:', { ...newSale, payment_dates });
 
       const res = await axios.post(
-        'http://127.0.0.1:8000/api/sales/',
+        'https://backend-qzry.onrender.com/api/sales/',
         { ...newSale, payment_dates },
         {
           headers: { Authorization: `Token ${token}` },
@@ -134,7 +134,7 @@ function Sales() {
     if (!window.confirm('Deseja realmente apagar esta venda?')) return;
     const token = localStorage.getItem('token');
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/sales/${id}/`, {
+      await axios.delete(`https://backend-qzry.onrender.com/api/sales/${id}/`, {
         headers: { Authorization: `Token ${token}` },
       });
       setSales(sales.filter((sale) => sale.id !== id));
@@ -184,7 +184,7 @@ function Sales() {
     try {
       // Envia a atualização para o backend
       await axios.patch(
-        `http://127.0.0.1:8000/api/sales/${saleId}/`,
+        `https://backend-qzry.onrender.com/api/sales/${saleId}/`,
         { payment_dates: updatedPaymentDates },
         { headers: { Authorization: `Token ${token}` } }
       );

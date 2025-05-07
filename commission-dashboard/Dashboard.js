@@ -5,7 +5,7 @@ const Dashboard = () => {
   const [sales, setSales] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/sales/')
+    axios.get('https://backend-qzry.onrender.com/api/sales/')
       .then(response => {
         setSales(response.data);
       })
