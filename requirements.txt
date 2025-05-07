@@ -1,0 +1,6 @@
+Django==4.2  # Certifique-se de usar a versão que está instalada no seu ambiente
+djangorestframework==3.14.0  # Para APIs REST
+djangorestframework-simplejwt==5.2.2  # Para autenticação com JWT
+gunicorn==20.1.0  # Para deploy em produção
+whitenoise==6.5.0  # Para servir arquivos estáticos em produção
+dj-database-url==1.2.0  # Para configuração de banco de dados em produção
